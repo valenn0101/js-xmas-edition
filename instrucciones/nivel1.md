@@ -105,6 +105,8 @@ Para validar nuestro formulario, vamos a tener  que hacer lo siguiente:
 
   Para validar que sólo tenga letras, podemos hacer:
 
+/^[A-z]+$/i
+
   `const contieneSoloLetras = /^[A-z]+$/.test(valor);`
 
   Esto va a retornar un booleano. True si sólo contiene letras o false
