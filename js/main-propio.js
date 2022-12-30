@@ -1,15 +1,3 @@
-const $formulario = document.getElementById("carta-a-santa");
-
-const nombre = $formulario.nombre.value;
-const ciudad = $formulario.ciudad.value;
-const comportamiento = $formulario.comportamiento.value;
-const descripcionRegalo = $formulario["descripcion-regalo"].value;
-
-console.log(nombre);
-console.log(ciudad);
-console.log(comportamiento);
-console.log(descripcionRegalo);
-
 /*
 
 Validaciones
@@ -51,12 +39,17 @@ function validarDescripcionRegalo(descripcionRegalo) {
   return "No hay error";
 }
 /*
-function validarFormulario (event){
-  const $formulario = document.getElementById("carta-a-santa");
+
+Funciones validacion
+
+*/
+
+function ValidarFormulario(event) {
+  const $formulario = document.querySelector("#carta-a-santa");
 
   const nombre = $formulario.nombre.value;
   const ciudad = $formulario.ciudad.value;
-  const descripcionRegalo = $formulario["descripcion-regalo"].value;
+  const descripcionRegalo = $formulario.descripcionRegalo.value;
 
   const errorNombre = validarNombre(nombre);
   const errorCiudad = validarCiudad(ciudad);
@@ -68,22 +61,32 @@ function validarFormulario (event){
     descripcionRegalo: errorDescripcionRegalo,
   };
 
-  console.log(errores);
-
-  manejarErrores([errorNombre, errorCiudad, errorDescripcionRegalo]);
+  manejarErrores(errores);
 
   event.preventDefault();
-  }
+}
 
-  function manejarErrores(errores){
-    errorNombre = errores[0]; //nombre
-    errorCiudad = errores[1]; //ciudad
-  //  errorDescripcionRegalo = errores[2]; //descripcionRegalo
+function manejarErrores(errores) {
+  errorNombre = errores.nombre;
+  errorCiudad = errores.ciudad;
+  errorDescripcionRegalo = errores.descripcionRegalo;
 
-    if (errorNombre){
-      $formulario.nombre.className = "error"
-    } else {
-      $formulario.nombre.className = "";
-    }
+  if (errorNombre) {
+    $formulario.nombre.className = "error";
+  } else {
+    $formulario.nombre.className = "";
   }
-  */
+  if (errorCiudad) {
+    $formulario.ciudad.className = "error";
+  } else {
+    $formulario.ciudad.className = "";
+  }
+  if(errorDescripcionRegalo){
+    $formulario.descripcionRegalo.className = "error";
+  } else {
+    $formulario.descripcionRegalo.className = "";
+  }
+}
+
+const $formulario = document.querySelector(`#carta-a-santa`);
+$formulario.onsubmit = ValidarFormulario;
