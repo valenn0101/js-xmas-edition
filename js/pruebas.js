@@ -17,7 +17,7 @@ function probarValidarNombre() {
   );
 
   console.assert(
-    validarNombre("Valentin") === "No hay error",
+    validarNombre("Valentin") === "",
     "Validar nombre fallo con un nombre validó"
   );
 }
@@ -30,7 +30,7 @@ function probarValidarCiudad() {
   );
 
   console.assert(
-    validarCiudad("Cordoba") === "No hay error",
+    validarCiudad("Cordoba") === "",
     "Validar ciudad fallo con un nombre validó"
   );
 }
@@ -50,7 +50,7 @@ function probarValidarDescripcionRegalo() {
   );
 
   console.assert(
-    validarDescripcionRegalo("Quiero un kilo de helado") === "No hay error",
+    validarDescripcionRegalo("Quiero un kilo de helado") === "",
     "Validar descripcion regalo no funcionó con una descripcion correcta"
   );
 
