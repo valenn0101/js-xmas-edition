@@ -1,9 +1,3 @@
-/*
-
-Validaciones
-
-*/
-
 function validarNombre(nombre) {
   if (nombre.length === 0) {
     return "Nombre debe tener al menos un caracter";
@@ -39,11 +33,6 @@ function validarDescripcionRegalo(descripcionRegalo) {
   return "";
 }
 
-/*
-
-Funciones validacion
-
-*/
 
 function ValidarFormulario(event) {
   const $formulario = document.querySelector("#carta-a-santa");
