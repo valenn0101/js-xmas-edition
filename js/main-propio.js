@@ -34,7 +34,8 @@ function validarDescripcionRegalo(descripcionRegalo) {
 }
 
 
-function ValidarFormulario(event) {
+function validarFormulario(event) {
+  event.preventDefault();
   const $formulario = document.querySelector("#carta-a-santa");
   const nombre = $formulario.nombre.value;
   const ciudad = $formulario.ciudad.value;
@@ -62,7 +63,7 @@ function ValidarFormulario(event) {
     }, tiempoDeEspera)
   }
 
-  event.preventDefault();
+ 
 }
 
 function manejarErrores(errores) {
@@ -96,4 +97,4 @@ function manejarErrores(errores) {
 }
 
 const $formulario = document.querySelector(`#carta-a-santa`);
-$formulario.onsubmit = ValidarFormulario;
+$formulario.onsubmit = validarFormulario;
